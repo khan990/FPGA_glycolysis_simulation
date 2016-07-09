@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "F:\Thesis\TryNew22\pcores\my_newip_22_v1_00_a\devl\synthesis\my_newip_22_xst.prj"
+-top my_newip_22
+-p virtex6
+-ofn "F:\Thesis\TryNew22\pcores\my_newip_22_v1_00_a\devl\synthesis\my_newip_22_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib my_newip_22_v1_00_a

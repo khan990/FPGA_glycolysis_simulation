@@ -1,0 +1,7 @@
+INFILE=F:\Thesis\TryNew22\implementation\system.ncd
+OUTFILE=F:\Thesis\TryNew22\implementation\system.bit
+FAMILY=Virtex4
+PART=xc4vfx12-10ff668
+WORKINGDIR=F:\Thesis\TryNew22\implementation
+LICENSE=WebPack
+USER_INFO=__0_0_0

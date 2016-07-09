@@ -1,0 +1,66 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Tue Jun 03 17:06:15 2014
+
+drc -z system.ncd system.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/CLKOUT is sourced by a combinatorial pin. This is not good design
+   practice. Use the CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<1> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<2> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<3> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<4> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<5> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   DCM_AUTOCALIBRATION_clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_A
+   DV.DCM_ADV_INST/clock_generator_0/clock_generator_0/DCM0_INST/Using_DCM_ADV.D
+   CM_ADV_INST/cd/CLK<6> is sourced by a combinatorial pin. This is not good
+   design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
+WARNING:PhysDesignRules:367 - The signal
+   <xps_bram_if_cntlr_1_port_BRAM_Addr<30>> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <xps_bram_if_cntlr_1_port_BRAM_Addr<31>> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   my_newip_22_0_LED_pin<0> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   my_newip_22_0_LED_pin<1> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   my_newip_22_0_LED_pin<2> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   my_newip_22_0_LED_pin<3> is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   my_newip_22_0_LED_pin<4> is set but the tri state is not configured. 
+DRC detected 0 errors and 14 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

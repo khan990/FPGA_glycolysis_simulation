@@ -1,0 +1,9 @@
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TryNew22_hw_platform/system.xml -pe ppc405_0
+Application_EXE.elf 
+
+ELF file	: Application_EXE.elf
+elfcheck passed.

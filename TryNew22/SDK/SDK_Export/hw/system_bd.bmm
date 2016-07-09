@@ -1,0 +1,31 @@
+// BMM LOC annotation file.
+//
+// Release 14.6 -  P.20131013, build 3.0.10 Apr 3, 2013
+// Copyright (c) 1995-2014 Xilinx, Inc.  All rights reserved.
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Processor 'ppc405_0', ID 100, memory map.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+ADDRESS_MAP ppc405_0 PPC405 100
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //
+    // Processor 'ppc405_0' address space 'plb_bram_if_cntlr_1_bram_combined' 0xFFFFE000:0xFFFFFFFF (8 KBytes).
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+
+    ADDRESS_SPACE plb_bram_if_cntlr_1_bram_combined RAMB16 [0xFFFFE000:0xFFFFFFFF]
+        BUS_BLOCK
+            plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_0 RAMB16 [63:48] [0:1023] INPUT = plb_bram_if_cntlr_1_bram_combined_0.mem PLACED = X2Y7;
+            plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_1 RAMB16 [47:32] [0:1023] INPUT = plb_bram_if_cntlr_1_bram_combined_1.mem PLACED = X2Y5;
+            plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_2 RAMB16 [31:16] [0:1023] INPUT = plb_bram_if_cntlr_1_bram_combined_2.mem PLACED = X2Y6;
+            plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_3 RAMB16 [15:0] [0:1023] INPUT = plb_bram_if_cntlr_1_bram_combined_3.mem PLACED = X2Y4;
+        END_BUS_BLOCK;
+    END_ADDRESS_SPACE;
+
+END_ADDRESS_MAP;
+

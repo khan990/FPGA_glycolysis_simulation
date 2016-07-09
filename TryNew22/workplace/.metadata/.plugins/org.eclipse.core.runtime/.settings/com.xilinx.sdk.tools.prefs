@@ -1,0 +1,17 @@
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.bss=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.data=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.data1=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.fixup=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.rodata=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.rodata1=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.sbss=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.sbss2=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.sdata=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.sdata2=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.text=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:.vectors=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:Heap=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:Heap-size=102400
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:Stack=sram_MEM0_BASEADDR
+com.xilinx.sdk.linkgen.prefs.Application_EXE\:Stack-size=102400
+eclipse.preferences.version=1

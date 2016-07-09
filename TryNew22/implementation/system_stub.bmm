@@ -1,0 +1,14 @@
+// File: F:\Thesis\TryNew22\implementation\system_stub.bmm
+
+ADDRESS_MAP ppc405_0 PPC405 100
+	ADDRESS_SPACE plb_bram_if_cntlr_1_bram_combined COMBINED [0xffffe000:0xffffffff]
+		ADDRESS_RANGE RAMB16
+		BUS_BLOCK
+			system_i/plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_0 [63:48] INPUT = plb_bram_if_cntlr_1_bram_combined_0.mem ;
+			system_i/plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_1 [47:32] INPUT = plb_bram_if_cntlr_1_bram_combined_1.mem ;
+			system_i/plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_2 [31:16] INPUT = plb_bram_if_cntlr_1_bram_combined_2.mem ;
+			system_i/plb_bram_if_cntlr_1_bram/plb_bram_if_cntlr_1_bram/ramb16_3 [15:0] INPUT = plb_bram_if_cntlr_1_bram_combined_3.mem ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

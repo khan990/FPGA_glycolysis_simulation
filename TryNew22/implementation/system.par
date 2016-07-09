@@ -1,0 +1,277 @@
+Release 14.7 par P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+KHAN-PC::  Tue Jun 03 17:05:33 2014
+
+par -w -ol high system_map.ncd system.ncd system.pcf 
+
+
+Constraints file: system.pcf.
+Loading device for application Rf_Device from file '4vfx12.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\;C:\Xilinx\14.7\ISE_DS\EDK.
+   "system" is an NCD, version 3.2, device xc4vfx12, package ff668, speed -10
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.71 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+   Number of BSCANs                          1 out of 4      25%
+   Number of BUFGs                           3 out of 32      9%
+   Number of DCM_ADVs                        1 out of 4      25%
+   Number of ILOGICs                        48 out of 320    15%
+   Number of External IOBs                 104 out of 320    32%
+      Number of LOCed IOBs                 104 out of 104   100%
+
+   Number of JTAGPPCs                        1 out of 1     100%
+   Number of OLOGICs                        94 out of 320    29%
+   Number of PPC405_ADVs                     1 out of 1     100%
+   Number of RAMB16s                         6 out of 36     16%
+   Number of Slices                       3384 out of 5472   61%
+      Number of SLICEMs                     53 out of 2736    1%
+
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please
+   consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.
+Starting initial Timing Analysis.  REAL time: 7 secs 
+Finished initial Timing Analysis.  REAL time: 7 secs 
+
+WARNING:Par:288 - The signal xps_bram_if_cntlr_1_port_BRAM_Addr<30> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal xps_bram_if_cntlr_1_port_BRAM_Addr<31> has no load.  PAR will not attempt to route this
+   signal.
+Starting Router
+
+
+Phase  1  : 24454 unrouted;      REAL time: 7 secs 
+
+Phase  2  : 20856 unrouted;      REAL time: 7 secs 
+
+Phase  3  : 7485 unrouted;      REAL time: 10 secs 
+
+Phase  4  : 7483 unrouted; (Setup:0, Hold:165, Component Switching Limit:0)     REAL time: 12 secs 
+
+Updating file: system.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:165, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:165, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:165, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:165, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Total REAL time to Router completion: 17 secs 
+Total CPU time to Router completion: 17 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|fpga_0_SRAM_ZBT_CLK_ |              |      |      |            |             |
+|        OUT_pin_OBUF | BUFGCTRL_X0Y0| No   | 2357 |  0.349     |  2.710      |
++---------------------+--------------+------+------+------------+-------------+
+|fpga_0_SysACE_Compac |              |      |      |            |             |
+|tFlash_SysACE_CLK_pi |              |      |      |            |             |
+|             n_BUFGP | BUFGCTRL_X0Y1| No   |   72 |  0.129     |  2.552      |
++---------------------+--------------+------+------+------------+-------------+
+|     mdm_0/Dbg_Clk_0 |BUFGCTRL_X0Y31| No   |   48 |  0.193     |  2.547      |
++---------------------+--------------+------+------+------------+-------------+
+|fpga_0_clk_1_sys_clk |              |      |      |            |             |
+|          _pin_IBUFG |         Local|      |    7 |  0.555     |  2.750      |
++---------------------+--------------+------+------+------------+-------------+
+|  mdm_0/Dbg_Update_0 |         Local|      |   21 |  1.074     |  2.139      |
++---------------------+--------------+------+------+------------+-------------+
+|ppc405_0_jtagppc_bus |              |      |      |            |             |
+|         _JTGC405TCK |         Local|      |    1 |  0.000     |  1.647      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|        _INST/CLKOUT |         Local|      |    6 |  0.008     |  0.502      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|       _INST/FASTCLK |         Local|      |    3 |  0.000     |  0.714      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<1> |         Local|      |    2 |  0.000     |  0.498      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<2> |         Local|      |    2 |  0.000     |  0.718      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<3> |         Local|      |    2 |  0.000     |  0.506      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<4> |         Local|      |    2 |  0.000     |  0.726      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<5> |         Local|      |    2 |  0.000     |  0.682      |
++---------------------+--------------+------+------+------------+-------------+
+|DCM_AUTOCALIBRATION_ |              |      |      |            |             |
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/DCM0 |              |      |      |            |             |
+|_INST/Using_DCM_ADV. |              |      |      |            |             |
+|DCM_ADV_INST/clock_g |              |      |      |            |             |
+|enerator_0/clock_gen |              |      |      |            |             |
+|erator_0/DCM0_INST/U |              |      |      |            |             |
+|sing_DCM_ADV.DCM_ADV |              |      |      |            |             |
+|     _INST/cd/CLK<6> |         Local|      |    2 |  0.000     |  0.463      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clock_generator_0_clock_generator_0_SI | SETUP       |     0.161ns|     9.818ns|       0|           0
+  G_DCM0_CLK0 = PERIOD TIMEGRP         "clo | HOLD        |     0.358ns|            |       0|           0
+  ck_generator_0_clock_generator_0_SIG_DCM0 |             |            |            |        |            
+  _CLK0" TS_sys_clk_pin         HIGH 50%    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_ppc405_0_DCURDDACK = MAXDELAY FROM TIM | SETUP       |     1.716ns|     3.284ns|       0|           0
+  EGRP "ppc405_0_DCURDDACK_REG" TO          |             |            |            |        |            
+  TIMEGRP "CPUS" 5 ns PRIORITY 1            |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     8.309ns|     1.691ns|       0|           0
+  pin" 100 MHz HIGH 50%                     | HOLD        |     0.531ns|            |       0|           0
+                                            | MINPERIOD   |     3.334ns|     6.666ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  NET "fpga_0_SysACE_CompactFlash_SysACE_CL | SETUP       |    25.522ns|     4.478ns|       0|           0
+  K_pin_BUFGP/IBUFG" PERIOD = 30 ns         | HOLD        |     0.552ns|            |       0|           0
+   HIGH 50%                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_RST_ppc405_0_path" TIG           | SETUP       |         N/A|     4.007ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     10.000ns|      6.666ns|      9.818ns|            0|            0|            3|       198035|
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.818ns|          N/A|            0|            0|       198035|            0|
+| erator_0_SIG_DCM0_CLK0        |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 24 secs 
+Total CPU time to PAR completion: 19 secs 
+
+Peak Memory Usage:  526 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 4
+Number of info messages: 1
+
+Writing design to file system.ncd
+
+
+
+PAR done!

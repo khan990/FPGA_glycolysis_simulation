@@ -1,0 +1,233 @@
+
+# ##############################################################################
+# Created by Base System Builder Wizard for Xilinx EDK 14.7 Build EDK_P.20131013
+# Wed May 28 14:34:30 2014
+# Target Board:  Xilinx Virtex 4 ML403 Evaluation Platform Rev 1
+# Family:    virtex4
+# Device:    xc4vfx12
+# Package:   ff668
+# Speed Grade:  -10
+# Processor number: 1
+# Processor 1: ppc405_0
+# Processor clock frequency: 100.0
+# Bus clock frequency: 100.0
+# Debug Interface: FPGA JTAG
+# ##############################################################################
+ PARAMETER VERSION = 2.1.0
+
+
+ PORT fpga_0_LEDs_4Bit_GPIO_IO_pin = fpga_0_LEDs_4Bit_GPIO_IO_pin, DIR = IO, VEC = [0:3]
+ PORT fpga_0_Push_Buttons_Position_GPIO_IO_pin = fpga_0_Push_Buttons_Position_GPIO_IO_pin, DIR = IO, VEC = [0:4]
+ PORT fpga_0_SysACE_CompactFlash_SysACE_MPA_pin = fpga_0_SysACE_CompactFlash_SysACE_MPA_pin_vslice_6_1_concat, DIR = O, VEC = [6:1]
+ PORT fpga_0_SysACE_CompactFlash_SysACE_CLK_pin = fpga_0_SysACE_CompactFlash_SysACE_CLK_pin, DIR = I
+ PORT fpga_0_SysACE_CompactFlash_SysACE_MPIRQ_pin = fpga_0_SysACE_CompactFlash_SysACE_MPIRQ_pin, DIR = I
+ PORT fpga_0_SysACE_CompactFlash_SysACE_CEN_pin = fpga_0_SysACE_CompactFlash_SysACE_CEN_pin, DIR = O
+ PORT fpga_0_SysACE_CompactFlash_SysACE_OEN_pin = fpga_0_SysACE_CompactFlash_SysACE_OEN_pin, DIR = O
+ PORT fpga_0_SysACE_CompactFlash_SysACE_WEN_pin = fpga_0_SysACE_CompactFlash_SysACE_WEN_pin, DIR = O
+ PORT fpga_0_SysACE_CompactFlash_SysACE_MPD_pin = fpga_0_SysACE_CompactFlash_SysACE_MPD_pin, DIR = IO, VEC = [15:0]
+ PORT fpga_0_SRAM_Mem_A_pin = fpga_0_SRAM_Mem_A_pin_vslice_9_29_concat, DIR = O, VEC = [9:29]
+ PORT fpga_0_SRAM_Mem_CEN_pin = fpga_0_SRAM_Mem_CEN_pin, DIR = O
+ PORT fpga_0_SRAM_Mem_OEN_pin = fpga_0_SRAM_Mem_OEN_pin, DIR = O
+ PORT fpga_0_SRAM_Mem_WEN_pin = fpga_0_SRAM_Mem_WEN_pin, DIR = O
+ PORT fpga_0_SRAM_Mem_BEN_pin = fpga_0_SRAM_Mem_BEN_pin, DIR = O, VEC = [0:3]
+ PORT fpga_0_SRAM_Mem_ADV_LDN_pin = fpga_0_SRAM_Mem_ADV_LDN_pin, DIR = O
+ PORT fpga_0_SRAM_Mem_DQ_pin = fpga_0_SRAM_Mem_DQ_pin, DIR = IO, VEC = [0:31]
+ PORT fpga_0_SRAM_ZBT_CLK_OUT_pin = clk_100_0000MHzDCM0, DIR = O
+ PORT fpga_0_clk_1_sys_clk_pin = CLK_S, DIR = I, SIGIS = CLK, CLK_FREQ = 100000000
+ PORT fpga_0_rst_1_sys_rst_pin = sys_rst_s, DIR = I, SIGIS = RST, RST_POLARITY = 0
+ PORT my_newip_22_0_LED_pin = my_newip_22_0_LED, DIR = O, VEC = [0:4]
+
+
+BEGIN ppc405_virtex4
+ PARAMETER INSTANCE = ppc405_0
+ PARAMETER C_FASTEST_PLB_CLOCK = DPLB0
+ PARAMETER C_IDCR_BASEADDR = 0b0100000000
+ PARAMETER C_IDCR_HIGHADDR = 0b0111111111
+ PARAMETER HW_VER = 2.01.b
+ BUS_INTERFACE DPLB0 = plb
+ BUS_INTERFACE IPLB0 = plb
+ BUS_INTERFACE JTAGPPC = ppc405_0_jtagppc_bus
+ BUS_INTERFACE RESETPPC = ppc_reset_bus
+ PORT CPMC405CLOCK = clk_100_0000MHzDCM0
+END
+
+BEGIN plb_v46
+ PARAMETER INSTANCE = plb
+ PARAMETER C_DCR_INTFCE = 0
+ PARAMETER C_NUM_CLK_PLB2OPB_REARB = 100
+ PARAMETER HW_VER = 1.05.a
+ PORT PLB_Clk = clk_100_0000MHzDCM0
+ PORT SYS_Rst = sys_bus_reset
+END
+
+BEGIN xps_bram_if_cntlr
+ PARAMETER INSTANCE = xps_bram_if_cntlr_1
+ PARAMETER C_SPLB_NATIVE_DWIDTH = 64
+ PARAMETER HW_VER = 1.00.b
+ PARAMETER C_BASEADDR = 0xffffe000
+ PARAMETER C_HIGHADDR = 0xffffffff
+ BUS_INTERFACE SPLB = plb
+ BUS_INTERFACE PORTA = xps_bram_if_cntlr_1_port
+END
+
+BEGIN bram_block
+ PARAMETER INSTANCE = plb_bram_if_cntlr_1_bram
+ PARAMETER HW_VER = 1.00.a
+ BUS_INTERFACE PORTA = xps_bram_if_cntlr_1_port
+END
+
+BEGIN xps_gpio
+ PARAMETER INSTANCE = LEDs_4Bit
+ PARAMETER C_ALL_INPUTS = 0
+ PARAMETER C_GPIO_WIDTH = 4
+ PARAMETER C_INTERRUPT_PRESENT = 0
+ PARAMETER C_IS_DUAL = 0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_BASEADDR = 0x81440000
+ PARAMETER C_HIGHADDR = 0x8144ffff
+ BUS_INTERFACE SPLB = plb
+ PORT GPIO_IO = fpga_0_LEDs_4Bit_GPIO_IO_pin
+END
+
+BEGIN xps_gpio
+ PARAMETER INSTANCE = LEDs_Positions
+ PARAMETER C_ALL_INPUTS = 0
+ PARAMETER C_GPIO_WIDTH = 5
+ PARAMETER C_INTERRUPT_PRESENT = 0
+ PARAMETER C_IS_DUAL = 0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_BASEADDR = 0x81420000
+ PARAMETER C_HIGHADDR = 0x8142ffff
+ BUS_INTERFACE SPLB = plb
+END
+
+# PORT GPIO_IO = fpga_0_LEDs_Positions_GPIO_IO_pin
+BEGIN xps_gpio
+ PARAMETER INSTANCE = Push_Buttons_Position
+ PARAMETER C_ALL_INPUTS = 1
+ PARAMETER C_GPIO_WIDTH = 5
+ PARAMETER C_INTERRUPT_PRESENT = 0
+ PARAMETER C_IS_DUAL = 0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_BASEADDR = 0x81400000
+ PARAMETER C_HIGHADDR = 0x8140ffff
+ BUS_INTERFACE SPLB = plb
+ PORT GPIO_IO = fpga_0_Push_Buttons_Position_GPIO_IO_pin
+END
+
+BEGIN xps_sysace
+ PARAMETER INSTANCE = SysACE_CompactFlash
+ PARAMETER C_MEM_WIDTH = 16
+ PARAMETER HW_VER = 1.01.a
+ PARAMETER C_BASEADDR = 0x83600000
+ PARAMETER C_HIGHADDR = 0x8360ffff
+ BUS_INTERFACE SPLB = plb
+ PORT SysACE_MPA = fpga_0_SysACE_CompactFlash_SysACE_MPA_pin_vslice_6_1_concat & 0b0
+ PORT SysACE_CLK = fpga_0_SysACE_CompactFlash_SysACE_CLK_pin
+ PORT SysACE_MPIRQ = fpga_0_SysACE_CompactFlash_SysACE_MPIRQ_pin
+ PORT SysACE_CEN = fpga_0_SysACE_CompactFlash_SysACE_CEN_pin
+ PORT SysACE_OEN = fpga_0_SysACE_CompactFlash_SysACE_OEN_pin
+ PORT SysACE_WEN = fpga_0_SysACE_CompactFlash_SysACE_WEN_pin
+ PORT SysACE_MPD = fpga_0_SysACE_CompactFlash_SysACE_MPD_pin
+END
+
+BEGIN xps_mch_emc
+ PARAMETER INSTANCE = SRAM
+ PARAMETER C_NUM_BANKS_MEM = 1
+ PARAMETER C_NUM_CHANNELS = 0
+ PARAMETER C_INCLUDE_NEGEDGE_IOREGS = 1
+ PARAMETER C_MEM0_WIDTH = 32
+ PARAMETER C_MAX_MEM_WIDTH = 32
+ PARAMETER C_INCLUDE_DATAWIDTH_MATCHING_0 = 1
+ PARAMETER C_SYNCH_MEM_0 = 1
+ PARAMETER C_TCEDV_PS_MEM_0 = 0
+ PARAMETER C_TAVDV_PS_MEM_0 = 0
+ PARAMETER C_THZCE_PS_MEM_0 = 0
+ PARAMETER C_TWC_PS_MEM_0 = 0
+ PARAMETER C_TWP_PS_MEM_0 = 0
+ PARAMETER C_TLZWE_PS_MEM_0 = 0
+ PARAMETER HW_VER = 3.01.a
+ PARAMETER C_MEM0_BASEADDR = 0x00000000
+ PARAMETER C_MEM0_HIGHADDR = 0x000fffff
+ BUS_INTERFACE SPLB = plb
+ PORT RdClk = clk_100_0000MHzDCM0
+ PORT Mem_A = 0b000000000 & fpga_0_SRAM_Mem_A_pin_vslice_9_29_concat & 0b00
+ PORT Mem_CEN = fpga_0_SRAM_Mem_CEN_pin
+ PORT Mem_OEN = fpga_0_SRAM_Mem_OEN_pin
+ PORT Mem_WEN = fpga_0_SRAM_Mem_WEN_pin
+ PORT Mem_BEN = fpga_0_SRAM_Mem_BEN_pin
+ PORT Mem_ADV_LDN = fpga_0_SRAM_Mem_ADV_LDN_pin
+ PORT Mem_DQ = fpga_0_SRAM_Mem_DQ_pin
+END
+
+BEGIN xps_timer
+ PARAMETER INSTANCE = xps_timer_0
+ PARAMETER C_COUNT_WIDTH = 32
+ PARAMETER C_ONE_TIMER_ONLY = 0
+ PARAMETER HW_VER = 1.02.a
+ PARAMETER C_BASEADDR = 0x83c00000
+ PARAMETER C_HIGHADDR = 0x83c0ffff
+ BUS_INTERFACE SPLB = plb
+END
+
+BEGIN xps_timebase_wdt
+ PARAMETER INSTANCE = xps_timebase_wdt_0
+ PARAMETER C_WDT_INTERVAL = 30
+ PARAMETER C_WDT_ENABLE_ONCE = 0
+ PARAMETER HW_VER = 1.02.a
+ PARAMETER C_BASEADDR = 0x83a00000
+ PARAMETER C_HIGHADDR = 0x83a0ffff
+ BUS_INTERFACE SPLB = plb
+END
+
+BEGIN clock_generator
+ PARAMETER INSTANCE = clock_generator_0
+ PARAMETER C_CLKIN_FREQ = 100000000
+ PARAMETER C_CLKOUT0_FREQ = 100000000
+ PARAMETER C_CLKOUT0_PHASE = 0
+ PARAMETER C_CLKOUT0_GROUP = DCM0
+ PARAMETER C_CLKOUT0_BUF = TRUE
+ PARAMETER C_EXT_RESET_HIGH = 0
+ PARAMETER HW_VER = 4.03.a
+ PORT CLKIN = CLK_S
+ PORT CLKOUT0 = clk_100_0000MHzDCM0
+ PORT RST = sys_rst_s
+ PORT LOCKED = Dcm_all_locked
+END
+
+BEGIN jtagppc_cntlr
+ PARAMETER INSTANCE = jtagppc_cntlr_inst
+ PARAMETER HW_VER = 2.01.c
+ BUS_INTERFACE JTAGPPC0 = ppc405_0_jtagppc_bus
+END
+
+BEGIN proc_sys_reset
+ PARAMETER INSTANCE = proc_sys_reset_0
+ PARAMETER C_EXT_RESET_HIGH = 0
+ PARAMETER HW_VER = 3.00.a
+ BUS_INTERFACE RESETPPC0 = ppc_reset_bus
+ PORT Slowest_sync_clk = clk_100_0000MHzDCM0
+ PORT Ext_Reset_In = sys_rst_s
+ PORT Dcm_locked = Dcm_all_locked
+ PORT Bus_Struct_Reset = sys_bus_reset
+ PORT Peripheral_Reset = sys_periph_reset
+END
+
+BEGIN mdm
+ PARAMETER INSTANCE = mdm_0
+ PARAMETER C_USE_UART = 1
+ PARAMETER HW_VER = 2.10.a
+ PARAMETER C_BASEADDR = 0x84400000
+ PARAMETER C_HIGHADDR = 0x8440ffff
+ BUS_INTERFACE SPLB = plb
+END
+
+BEGIN my_newip_22
+ PARAMETER INSTANCE = my_newip_22_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_BASEADDR = 0xc2400000
+ PARAMETER C_HIGHADDR = 0xc240ffff
+ BUS_INTERFACE SPLB = plb
+ PORT LED = my_newip_22_0_LED
+END
+
